@@ -64,4 +64,7 @@ nest g service prisma
 pnpm add @nestjs/graphql @nestjs/apollo @apollo/server graphql
 
 pnpm add -D ts-morph
+
+# resource dog graphql (schema first)
+nest generate resource dog
 ```
