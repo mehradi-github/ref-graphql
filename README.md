@@ -53,4 +53,5 @@ Prisma Studio: GUI to view and edit data in your database
 ```bash
 pnpm add -D prisma
 pnpx prisma init
+pnpx prisma migrate dev --name dog
 ```
