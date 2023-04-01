@@ -7,6 +7,7 @@ This project is built with NestJS, Graphql, Docker and Prisma.
     - [Nest CLI](#nest-cli)
     - [Installing docker-compose](#installing-docker-compose)
     - [Installing Prisma](#installing-prisma)
+  - [Graphql via Nest CLI](#graphql-via-nest-cli)
 
 
 
@@ -54,4 +55,8 @@ Prisma Studio: GUI to view and edit data in your database
 pnpm add -D prisma
 pnpx prisma init
 pnpx prisma migrate dev --name dog
+```
+## Graphql via Nest CLI
+
+nest g service prisma
 ```
