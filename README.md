@@ -5,6 +5,7 @@ This project is built with NestJS, Graphql, Docker and Prisma.
   - [Prerequisites](#prerequisites)
     - [pnpm](#pnpm)
     - [Nest CLI](#nest-cli)
+    - [Installing docker-compose:](#installing-docker-compose)
 
 
 
@@ -26,4 +27,11 @@ pnpm install
 pnpm run start:dev
 
 
+```
+
+### Installing docker-compose:
+```bash
+sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose version
 ```
