@@ -1,7 +1,7 @@
-# The Gateway
-This project is built with NestJS and Graphql.
+# The Graphql
+This project is built with NestJS, Graphql, Docker and Prisma.
 
-- [The Gateway](#the-gateway)
+- [The Graphql](#the-graphql)
   - [Prerequisites](#prerequisites)
     - [pnpm](#pnpm)
     - [Nest CLI](#nest-cli)
