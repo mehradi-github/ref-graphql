@@ -51,6 +51,6 @@ Prisma Migrate: Declarative data modeling & migration system
 Prisma Studio: GUI to view and edit data in your database
 
 ```bash
-pnpm add -D Prisma
+pnpm add -D prisma
 pnpx prisma init
 ```
