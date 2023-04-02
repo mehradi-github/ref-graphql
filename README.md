@@ -6,6 +6,7 @@ This project is built with NestJS, Graphql, Docker and Prisma.
     - [pnpm](#pnpm)
     - [Nest CLI](#nest-cli)
     - [Installing docker-compose](#installing-docker-compose)
+    - [Docker](#docker)
     - [Installing Prisma](#installing-prisma)
   - [Graphql via Nest CLI](#graphql-via-nest-cli)
 
@@ -41,9 +42,37 @@ sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-c
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose version
 
-docker-compuse up
+docker-compuse up -d
+
+docker ps
+docker exec -it NAME bash
+psql -U root -d backend
+backend=# \dt
+
+docker-compuse stop
+```
+```sql
+SELECT *
+FROM pg_catalog.pg_tables
+WHERE schemaname != 'pg_catalog' AND 
+    schemaname != 'information_schema';
+```
+### Docker
+
+```bash
+docker ps
+docker inspect backend-db
+
+# Backup a container
+docker run --rm --volumes-from CONTAINER -v $(pwd):/backup busybox tar cvfz /backup/backup.tar CONTAINERPATH
+
+# Restore container from backup
+docker run --rm --volumes-from CONTAINER -v $(pwd):/backup busybox sh -c "cd CONTAINERPATH && tar xvf /backup/backup.tar --strip 1"
+
+
 
 ```
+
 ### Installing Prisma
 [Prisma](https://www.prisma.io/docs/getting-started) is a next-generation ORM that consists of these tools:
 
@@ -55,6 +84,7 @@ Prisma Studio: GUI to view and edit data in your database
 pnpm add -D prisma
 pnpx prisma init
 pnpx prisma migrate dev --name dog
+
 ```
 ## Graphql via Nest CLI
 
