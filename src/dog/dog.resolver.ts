@@ -12,7 +12,7 @@ export class DogResolver {
     return this.dogService.create(createDogInput);
   }
 
-  @Query('dog')
+  @Query('dogs')
   findAll() {
     return this.dogService.findAll();
   }

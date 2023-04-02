@@ -1,19 +1,19 @@
 type Dog {
-  # Example field (placeholder)
-  exampleField: Int
+  id: Int!
+  name: String!
 }
 
 input CreateDogInput {
-  # Example field (placeholder)
-  exampleField: Int
+  name: String!
 }
 
 input UpdateDogInput {
   id: Int!
+  name: String!
 }
 
 type Query {
-  dog: [Dog]!
+  dogs: [Dog]!
   dog(id: Int!): Dog
 }
 

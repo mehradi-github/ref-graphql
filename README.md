@@ -97,4 +97,9 @@ pnpm add -D ts-morph
 
 # resource dog graphql (schema first)
 nest generate resource dog
+
+#Updates all dependencies, adhering to ranges specified in package.json
+pnpm up
+# Updates all dependencies, ignoring ranges specified in package.json
+pnpm up --latest
 ```
