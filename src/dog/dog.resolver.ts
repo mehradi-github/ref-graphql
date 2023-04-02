@@ -1,7 +1,6 @@
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
+import { CreateDogInput, UpdateDogInput } from 'src/types/graphql';
 import { DogService } from './dog.service';
-import { CreateDogInput } from './dto/create-dog.input';
-import { UpdateDogInput } from './dto/update-dog.input';
 
 @Resolver('Dog')
 export class DogResolver {

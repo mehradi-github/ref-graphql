@@ -85,6 +85,7 @@ pnpm add -D prisma
 pnpx prisma init
 pnpx prisma migrate dev --name dog
 
+pnpx prisma studio
 ```
 ## Graphql via Nest CLI
 
@@ -102,4 +103,6 @@ nest generate resource dog
 pnpm up
 # Updates all dependencies, ignoring ranges specified in package.json
 pnpm up --latest
+
+# http://localhost:3000/graphql
 ```
