@@ -8,6 +8,7 @@ import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin
 import { join } from 'path';
 import { PrismaModule } from './prisma/prisma.module';
 import { DogModule } from './dog/dog.module';
+import { OwnerModule } from './owner/owner.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { DogModule } from './dog/dog.module';
     }),
     PrismaModule,
     DogModule,
+    OwnerModule,
   ],
   controllers: [AppController],
   providers: [AppService],
