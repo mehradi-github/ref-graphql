@@ -5,9 +5,9 @@ import { CreateDogInput, UpdateDogInput } from 'src/types/graphql';
 @Injectable()
 export class DogService {
   constructor(private prisma: PrismaService) {}
-  create({ name }: CreateDogInput) {
+  create({ name, ownerId }: CreateDogInput) {
     return this.prisma.dog.create({
-      data: { name },
+      data: { name, ownerId },
     });
   }
 

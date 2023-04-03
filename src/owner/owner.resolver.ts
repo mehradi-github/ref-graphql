@@ -1,6 +1,6 @@
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
+import { CreateOwnerInput } from 'src/types/graphql';
 import { OwnerService } from './owner.service';
-import { CreateOwnerInput } from './dto/create-owner.input';
 
 @Resolver('Owner')
 export class OwnerResolver {

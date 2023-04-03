@@ -1,26 +1,28 @@
 import { Injectable } from '@nestjs/common';
-import { CreateOwnerInput } from './dto/create-owner.input';
-import { UpdateOwnerInput } from './dto/update-owner.input';
+import { PrismaService } from 'src/prisma/prisma.service';
+import { CreateOwnerInput } from 'src/types/graphql';
 
 @Injectable()
 export class OwnerService {
-  create(createOwnerInput: CreateOwnerInput) {
-    return 'This action adds a new owner';
-  }
-
-  findAll() {
-    return `This action returns all owner`;
+  constructor(private prisma: PrismaService) {}
+  create({ name }: CreateOwnerInput) {
+    return this.prisma.owner.create({
+      data: { name },
+      include: { dogs: true },
+    });
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} owner`;
-  }
-
-  update(id: number, updateOwnerInput: UpdateOwnerInput) {
-    return `This action updates a #${id} owner`;
+    return this.prisma.owner.findUnique({
+      where: { id },
+      include: { dogs: true },
+    });
   }
 
   remove(id: number) {
-    return `This action removes a #${id} owner`;
+    return this.prisma.owner.delete({
+      where: { id },
+      include: { dogs: true },
+    });
   }
 }
